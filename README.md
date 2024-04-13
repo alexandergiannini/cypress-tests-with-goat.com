@@ -1,2 +1,2 @@
-# Cypress tests executing against GOAT.com
+# Cypress tests executing against nike.com
 

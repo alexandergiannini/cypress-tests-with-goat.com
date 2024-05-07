@@ -19,4 +19,14 @@ describe('Nike homepage tests', () => {
     cy.titleAttr('Favorites').scrollIntoView().click();
     cy.ariaLabel('Enter your email to join us or sign in.').should('be.visible');
   });
+
+  it('should select Help within the footer', () => {
+    cy.ariaLabel('main-footer, main-footer, Help').scrollIntoView().click();
+    cy.url().should('include', '/help');
+  })
+
+  it('should select Shop Mens New Arrivals', () => {
+    cy.ariaLabel("Shop Men's New Arrivals ").scrollIntoView().click();
+    cy.get('.wall-header__title').contains("Men's New Releases").should('be.visible');
+  })
 })

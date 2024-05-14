@@ -9,6 +9,12 @@ describe('Nike homepage tests', () => {
     cy.get('.wall-header__title').contains('Air Force 1').should('be.visible');
   });
 
+  it('should select a suggested product when typing in a search', () => {
+    cy.get('#VisualSearchInput').type("Air Force 1");
+    cy.get('#VisualSearchProduct-0').click();
+    cy.get('h1#pdp_product_title').eq(1).contains("Nike Air Force 1 '07").should('be.visible');
+  });
+
   it('should select an item within the Men Nav Item', () => {
     cy.ariaLabel('Men').trigger('mouseover');
     cy.ariaLabel('main-menu, Men, Shoes, Lifestyle').click();
